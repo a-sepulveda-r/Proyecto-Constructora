@@ -1,0 +1,150 @@
+/* Estilos generales */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #344e41;
+  color: #fefae0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+/* Estilos de la sección hero */
+
+.hero {
+  background-image: url("./assets/img/img-principal.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #a4c3b2;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.hero button {
+  background-color: #fff;
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos de la sección modelos */
+
+.models {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+  margin-top: 60px;
+}
+
+.models div {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.models img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.models h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.models p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Estilos de la sección características */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+  margin-top: 60px;
+}
+
+.features div {
+  background-color: #f2f2f2;
+  padding: 40px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.features p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Estilos del footer */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+  line-height: 1.5;
+}
