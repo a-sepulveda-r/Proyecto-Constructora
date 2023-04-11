@@ -1,6 +1,57 @@
-body {
-  display: block;
+input.error {
+  background-color: red;
+  color: white;
+}
+span.error {
+  color: red;
+}
+main h1 {
+  padding-bottom: 1rem;
+}
+main {
+  padding: 2rem 2rem 10rem;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+form fieldset {
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+form input {
+  height: 1.7rem;
+  border-radius: 10px;
+}
+form span {
+  font-weight: 300;
+}
+form fieldset legend {
+  font-weight: 500;
+}
+form fieldset div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+form fieldset div label {
+  font-weight: 300;
+}
+.boton {
+  height: 50px;
+  width: 100px;
+  border-radius: 50px;
+  margin-left: 20px;
+}
+
+.bg-success {
+  background-color: #588157;
+}
+.bg-success:hover {
+  background-color: #3a5a40;
+}
+.bg-warning {
+  background-color: #fcbf49;
+}
+.bg-warning:hover {
+  background-color: #fca311;
 }

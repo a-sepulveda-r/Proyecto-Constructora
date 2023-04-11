@@ -22,34 +22,58 @@
       </nav>
     </header>
 
-    <main class="main">
-      <div class="contact-form">
-        <h2>Contacto</h2>
-        <form id="contactForm" method="post">
-          <label for="rut">RUT:</label>
-          <input type="text" id="rut" name="rut" required />
+    <main>
+      <h1>Contacta a un Ejecutivo de ModelHome</h1>
 
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required />
-
-          <label for="direccion">Dirección:</label>
-          <input type="text" id="direccion" name="direccion" required />
-
-          <label for="comuna">Comuna:</label>
-          <input type="text" id="comuna" name="comuna" required />
-
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-          <input type="submit" value="Enviar" />
-        </form>
-        <div id="response" class="success"></div>
-      </div>
+      <form action="contacto.html">
+        <fieldset>
+          <legend>Datos Personales</legend>
+          <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" />
+            <span></span>
+          </div>
+          <div>
+            <label for="rut">RUT</label>
+            <input type="text" id="rut" name="rut" placeholder="12345678-5" />
+            <span></span>
+          </div>
+          <div>
+            <label for="rut">Teléfono</label>
+            <input type="text" id="telefono" name="telefono" />
+            <span></span>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Ubicación</legend>
+          <div>
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" />
+            <span></span>
+          </div>
+          <div>
+            <label for="comuna">Comuna</label>
+            <select name="comuna" id="comuna">
+              <option value="">-- Por favor escoja una opción--</option>
+              <option value="santiago">Santiago</option>
+              <option value="providencia">Providencia</option>
+              <option value="la-florida">La Florida</option>
+              <option value="las-condes">Las Condes</option>
+              <option value="vitacura">Vitacura</option>
+            </select>
+            <span></span>
+          </div>
+        </fieldset>
+        <div class="botones">
+          <button class="boton bg-success submit" type="submit">Enviar</button>
+          <button class="boton bg-warning reset" type="reset">Limpiar</button>
+        </div>
+      </form>
     </main>
 
     <footer class="footer">
       <p>Derechos reservados &copy; 2023 Constructora ModelHome</p>
     </footer>
-    <script src="./app.js"></script>
+    <script src="./assets/js/contacto.js"></script>
   </body>
 </html>
