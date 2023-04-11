@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructora ModelHome - Contacto</title>
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+    <link rel="stylesheet" href="./assets/styles/styleContacto.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Constructora ModelHome</h1>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Modelos</a></li>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Iniciar sesión</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="contact-form">
+        <h2>Contacto</h2>
+        <form id="contactForm" method="post">
+          <label for="rut">RUT:</label>
+          <input type="text" id="rut" name="rut" required />
+
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+
+          <label for="direccion">Dirección:</label>
+          <input type="text" id="direccion" name="direccion" required />
+
+          <label for="comuna">Comuna:</label>
+          <input type="text" id="comuna" name="comuna" required />
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+          <input type="submit" value="Enviar" />
+        </form>
+        <div id="response" class="success"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Derechos reservados &copy; 2023 Constructora ModelHome</p>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
