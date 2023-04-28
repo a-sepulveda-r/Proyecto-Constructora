@@ -28,6 +28,7 @@ form span {
 form fieldset legend {
   font-weight: 500;
 }
+
 form fieldset div {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const persona = {
+        name: "John",
+        age: 30,
+      };
+      fetch("https://alluring-grape-robe.glitch.me/registro-usuario", {
+        method: "POST",
+        body: JSON.stringify(persona),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => console.dir(data))
+        .catch((error) => console.error(error));
+    </script>
+  </body>
+</html>
