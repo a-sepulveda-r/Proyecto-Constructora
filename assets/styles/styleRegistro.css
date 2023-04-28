@@ -1,0 +1,12 @@
+main {
+  min-height: 600px;
+}
+
+.div-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.botones {
+  padding: 10px;
+}
