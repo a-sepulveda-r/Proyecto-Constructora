@@ -8,28 +8,37 @@
     <link rel="stylesheet" href="./assets/styles/styles.css" />
     <link rel="stylesheet" href="./assets/styles/styleContacto.css" />
     <link rel="stylesheet" href="./assets/styles/styleRegistro.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header class="header">
-      <h1 class="h1-index">Constructora ModelHome</h1>
-      <nav class="nav">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="registro.html">Registro</a></li>
-          <li><a href="login.html">Iniciar sesión</a></li>
-        </ul>
-      </nav>
-    </header>
+      <img src="assets/img/model-home.png" class="img-header">
+        <nav class="nav">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="registro.html">Registro</a></li>
+            <li><a href="login.html">Iniciar sesión</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <main>
-      <h1>Ingresa tus datos para registrarte</h1>
+
+
+     <!-- Form section  -->
+    <main class="form-container">
+      <div class="form-img">
+        <img src="assets/img/house-form.png" alt="Modelo de casa" class="form-img01">
+      </div>
       <div class="div-form">
-        <form action="contacto.html">
+        <h2>Regista tu interés en <strong>ModelHome</strong></h2>
+        <form action="contacto.html" class="form-container">
           <fieldset>
-            <legend>Datos Personales</legend>
             <form action="index.html" method="POST">
+              <p>Datos personales</p>
               <div>
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="" />

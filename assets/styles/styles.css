@@ -7,12 +7,12 @@ html,
 body {
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-}
+  }
 header {
-  background-color: #344e41;
+  background: radial-gradient(circle, rgb(72, 111, 90) 0%, rgba(52,78,64,1) 100%);
   color: #fefae0;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ header {
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   /* Agrega aquí tus estilos para dispositivos móviles */
   header {
-    background-color: #344e41;
+    background: radial-gradient(circle, rgba(72,111,90,1) 0%, rgba(52,78,64,1) 100%);
     color: #fefae0;
     display: flex;
     flex-direction: column;
@@ -33,18 +33,25 @@ header {
   }
 }
 
+.img-header{
+  height:60px;
+  padding-top: 8px;
+  cursor: pointer;
+}
+
 .h1-index {
   text-align: center;
   padding-top: 10px;
   margin: 0;
 }
+
 nav ul {
   display: flex;
   list-style: none;
 }
 
 nav li {
-  margin: 0 10px;
+  margin: 0 12px;
 }
 
 nav a {
@@ -247,5 +254,6 @@ footer p {
 }
 
 main {
-  background-color: #fdf0d5;
-}
+  /* background-color: #fdf0d5; */
+  background: -webkit-linear-gradient(left, #fdf0d5, #fee3b7);
+} 
