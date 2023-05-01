@@ -1,5 +1,5 @@
 main {
-  min-height: 600px;
+  min-height: 1000px;
 }
 
 h2 {
@@ -15,6 +15,7 @@ h2 {
 .form-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  place-content: center;
   gap: 10px;
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
@@ -46,19 +47,19 @@ h2 {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
   }
 }
-.form-img {
+/* .form-img {
   display: flex;
   justify-content: center;
-}
+} */
 .form-img01 {
   height: 550px;
 }
 
-.div-form {
+/* .div-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+} */
 
 .botones {
   padding: 10px;
@@ -67,7 +68,7 @@ h2 {
 form fieldset {
   border-radius: 10px;
   background: #fff;
-  width: 350px;
+  /* width: 350px; */
   border: none;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
 }
