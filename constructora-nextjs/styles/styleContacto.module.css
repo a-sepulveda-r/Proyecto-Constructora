@@ -1,0 +1,69 @@
+input.error {
+  background-color: red;
+  color: white;
+}
+span.error {
+  color: red;
+}
+.mainContacto h1 {
+  padding-bottom: 1rem;
+}
+.mainContacto {
+  padding: 2rem 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.formContactoFieldset {
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.formContactoSpan {
+  font-weight: 300;
+}
+.formContactoFieldsetLegend {
+  font-weight: 500;
+}
+
+.formContactoFieldsetDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.formContactoFieldsetDivLabel {
+  font-weight: 300;
+}
+.boton {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #fff;
+  height: 40px;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* .bg-success {
+  background: -webkit-linear-gradient(right, #5e905d, #63b463);
+} */
+.bgSuccess {
+  background-color: #63b463;
+}
+.bgSuccess:hover {
+  background-color: #3a5a40;
+}
+.bgWarning {
+  background-color: #fcbf49;
+}
+.bgWarning:hover {
+  background-color: #fca311;
+}
