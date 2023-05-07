@@ -40,24 +40,25 @@
       </div>
       <div class="div-form">
         <h2>Inicia sesión en <strong>ModelHome</strong></h2>
-        <form action="contacto.html" class="form-container2">
+        <form method="post" action="login.html" class="form-container2">
           <fieldset>
-            <form action="index.html" method="POST">
-              <p>Datos personales</p>
+            <p>Datos personales</p>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" />
+            </div>
+            <div>
+              <label for="contrasena">Contraseña</label>
+              <input type="password" id="contrasena" name="contrasena" />
+            </div>
+            <div class="botones">
+              <button class="boton bg-success submit" type="submit">
+                Iniciar Sesión
+              </button>
               <div>
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" />
+                <p id="mensaje-servidor" style="color: red"></p>
               </div>
-              <div>
-                <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena" name="contrasena" />
-              </div>
-              <div class="botones">
-                <button class="boton bg-success submit" type="submit">
-                  Iniciar Sesión
-                </button>
-              </div>
-            </form>
+            </div>
           </fieldset>
         </form>
       </div>
@@ -66,6 +67,73 @@
     <footer class="footer">
       <p>Derechos reservados &copy; 2023 Constructora ModelHome</p>
     </footer>
-    <script src="./assets/js/contacto.js"></script>
+    <script>
+      const formulario = document.querySelector("form");
+      formulario.addEventListener("submit", async (eventoSubmit) => {
+        eventoSubmit.preventDefault();
+        const formElement = eventoSubmit.currentTarget;
+        const formData = new FormData(formElement);
+        const email = formData.get("email");
+        const contrasena = formData.get("contrasena");
+        const nuevoUsuario = {
+          email,
+          contrasena,
+        };
+
+        const baseUrl = "http://localhost:3000";
+        const url = baseUrl + "/login";
+        const fetchConfig = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(nuevoUsuario),
+        };
+
+        try {
+          const respuesta = await fetch(url, fetchConfig);
+          // si la respuesta no es OK
+          if (!respuesta.ok) {
+            // gestionar error o mensajes recibidos
+            console.error("La respuesta no está OK");
+            const mensajeError = document.createElement("p");
+            mensajeError.classList.add("mensaje-error");
+            mensajeError.textContent =
+              "Error al iniciar sesión. Por favor, revisa tus credenciales e inténtalo de nuevo.";
+            const botonesDiv = document.querySelector(".botones");
+            botonesDiv.parentNode.insertBefore(
+              mensajeError,
+              botonesDiv.nextSibling
+            );
+            return;
+          }
+
+          // en caso de exito
+          const objetoJson = await respuesta.json();
+          console.dir(objetoJson);
+
+          const usuario = objetoJson.usuario;
+          // caso éxito
+
+          // guardo datos del usuario y TOKEN
+          localStorage.setItem("usuario", JSON.stringify(usuario));
+          // redirijo a página protegida
+          window.location = "contacto.html";
+        } catch (error) {
+          // gestion errores
+          console.error(error.code);
+          console.error(error.message);
+          const mensajeError = document.createElement("p");
+          mensajeError.classList.add("mensaje-error");
+          mensajeError.textContent =
+            "Error al iniciar sesión. Por favor, revisa tus credenciales e inténtalo de nuevo.";
+          const botonesDiv = document.querySelector(".botones");
+          botonesDiv.parentNode.insertBefore(
+            mensajeError,
+            botonesDiv.nextSibling
+          );
+        }
+      });
+    </script>
   </body>
 </html>

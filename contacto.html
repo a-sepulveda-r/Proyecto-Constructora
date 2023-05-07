@@ -13,6 +13,36 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap"
       rel="stylesheet"
     />
+    <script>
+      const storageUsuario = localStorage.getItem("usuario"); // string
+      if (storageUsuario == null) {
+        // si no está autenticado
+        window.location = "login.html";
+      }
+
+      const objetoUsuario = JSON.parse(storageUsuario);
+      const token = objetoUsuario.user.stsTokenManager.accessToken;
+
+      const baseUrl = "http://localhost:3000";
+      const url = baseUrl + "/usuario/checktoken";
+      fetch(url, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        //body: '{}'
+      })
+        .then((respuesta) => {
+          if (!respuesta.ok) {
+            throw new Error("Token no válido");
+          }
+          respuesta.json();
+        })
+        .catch((error) => {
+          window.location = "login.html";
+        });
+    </script>
   </head>
 
   <body>
@@ -36,17 +66,23 @@
           <legend>Datos Personales</legend>
           <div>
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" />
+            <input type="text" id="nombre" name="nombre" required />
             <span></span>
           </div>
           <div>
             <label for="rut">RUT</label>
-            <input type="text" id="rut" name="rut" placeholder="12345678-5" />
+            <input
+              type="text"
+              id="rut"
+              name="rut"
+              placeholder="12345678-5"
+              required
+            />
             <span></span>
           </div>
           <div>
             <label for="rut">Teléfono</label>
-            <input type="text" id="telefono" name="telefono" />
+            <input type="text" id="telefono" name="telefono" required />
             <span></span>
           </div>
         </fieldset>
@@ -54,12 +90,12 @@
           <legend>Ubicación</legend>
           <div>
             <label for="direccion">Dirección</label>
-            <input type="text" id="direccion" name="direccion" />
+            <input type="text" id="direccion" name="direccion" required />
             <span></span>
           </div>
           <div>
             <label for="comuna">Comuna</label>
-            <select name="comuna" id="comuna">
+            <select name="comuna" id="comuna" required>
               <option value="">-- Por favor escoja una opción--</option>
               <option value="santiago">Santiago</option>
               <option value="providencia">Providencia</option>

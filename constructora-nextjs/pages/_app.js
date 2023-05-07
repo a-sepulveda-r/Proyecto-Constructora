@@ -4,9 +4,5 @@ import { AuthProvider } from "@/context/authContext";
 // import "@/styles/styleContacto.module.css";
 
 export default function App({ Component, pageProps }) {
-  return (
-    <AuthProvider>
-      <Component {...pageProps} />
-    </AuthProvider>
-  );
+  return <Component {...pageProps} />;
 }

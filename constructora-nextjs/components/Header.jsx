@@ -5,15 +5,15 @@ import { useContext } from "react";
 import AuthContext from "../context/authContext";
 
 const Header = () => {
-  const { currentUser, logout } = useContext(AuthContext);
+  // const { currentUser, logout } = useContext(AuthContext);
 
-  const handleLogout = async () => {
-    try {
-      await logout();
-    } catch (error) {
-      console.log("Error al cerrar sesión", error);
-    }
-  };
+  // const handleLogout = async () => {
+  //   try {
+  //     await logout();
+  //   } catch (error) {
+  //     console.log("Error al cerrar sesión", error);
+  //   }
+  // };
 
   return (
     <header className="header">
@@ -36,12 +36,14 @@ const Header = () => {
           <li>
             <Link href="/registro">Registro</Link>
           </li>
+
           <li>
-            {currentUser ? (
+            {/* {currentUser ? (
               <button onClick={handleLogout}>Cerrar sesión</button>
             ) : (
               <Link href="/login">Iniciar sesión</Link>
-            )}
+            )} */}
+            <Link href="/login">Iniciar sesión</Link>
           </li>
         </ul>
       </nav>

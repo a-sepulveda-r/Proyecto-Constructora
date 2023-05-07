@@ -1,3 +1,7 @@
+# Proyecto-Constructora
+
+## Pagina de una constructora que construye casas a medidas con varios tipos de modelo. Donde habra un menu de navegación con secciones de la pagina como Inicio, Registro,Inicio de sesion y Contacto con envio de una solicitud/formulario para una cotizacion de un proyecto que le sea de interes al cliente.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

@@ -40,28 +40,31 @@
       </div>
       <div class="div-form">
         <h2>Regista tu interés en <strong>ModelHome</strong></h2>
-        <form action="contacto.html" class="form-container2">
+        <form action="registro.html" class="form-container2">
           <fieldset>
-            <form action="index.html" method="POST">
-              <p>Datos personales</p>
-              <div>
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="" />
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" />
-              </div>
-              <div>
-                <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena" name="contrasena" />
-              </div>
-              <div class="botones">
-                <button class="boton bg-success submit" type="submit">
-                  Registrar
-                </button>
-              </div>
-            </form>
+            <p>Datos personales</p>
+            <div>
+              <label for="nombre">Nombre:</label>
+              <input type="text" name="nombre" id="nombre" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div>
+              <label for="contrasena">Contraseña</label>
+              <input
+                type="password"
+                id="contrasena"
+                name="contrasena"
+                required
+              />
+            </div>
+            <div class="botones">
+              <button class="boton bg-success submit" type="submit">
+                Registrar
+              </button>
+            </div>
           </fieldset>
         </form>
       </div>
@@ -70,6 +73,52 @@
     <footer class="footer">
       <p>Derechos reservados &copy; 2023 Constructora ModelHome</p>
     </footer>
-    <script src="./assets/js/contacto.js"></script>
+    <script>
+      const formulario = document.querySelector("form");
+      formulario.addEventListener("submit", async (eventoSubmit) => {
+        eventoSubmit.preventDefault();
+        // currentTarget: es lo mismo que la constante "form" que está arriba
+        // representa el elemento HTML que disparó el Evento
+        const formElement = eventoSubmit.currentTarget;
+        const formData = new FormData(formElement);
+        // con formData.get( nombreCampoForm )
+        const email = formData.get("email");
+        const contrasena = formData.get("contrasena");
+        const nuevoUsuario = {
+          email,
+          contrasena,
+        };
+
+        const baseUrl = "http://localhost:3000";
+        const url = baseUrl + "/registro";
+        const fetchConfig = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(nuevoUsuario),
+        };
+
+        try {
+          const respuesta = await fetch(url, fetchConfig);
+          // si la respuesta no es OK
+          if (!respuesta.ok) {
+            // gestionar error o mensajes recibidos
+            console.error("La respuesta no está OK");
+            return;
+          }
+
+          // en caso de exito
+          const objetoJson = await respuesta.json();
+          console.dir(objetoJson);
+          window.location = "login.html";
+        } catch (error) {
+          // gestion errores
+          console.error(error.code);
+          console.error(error.message);
+        }
+      });
+    </script>
+    <!-- <script src="./assets/js/contacto.js"></script> -->
   </body>
 </html>
