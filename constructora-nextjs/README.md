@@ -2,6 +2,22 @@
 
 ## Pagina de una constructora que construye casas a medidas con varios tipos de modelo. Donde habra un menu de navegación con secciones de la pagina como Inicio, Registro,Inicio de sesion y Contacto con envio de una solicitud/formulario para una cotizacion de un proyecto que le sea de interes al cliente.
 
+## la parte front end se construyo utilizando Nextjs y esta desplegada en vercel en el siguiente link:
+
+## https://constructora-nextjs-7qe7p4c8g-a-sepulveda-r.vercel.app/
+
+## para acceder ingresar el siguiente email y password:
+
+## email: usuariodeprueba@gmail.com
+
+## password: 12345678
+
+## Considerar abrir este link antes para el procesamiento de datos del backend:
+
+## https://earthy-north-theory.glitch.me/
+
+## El backend esta deployado el la plataforma de glitch el cual se construyo integrando el framework fastify de Nodejs con Firebase.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -16,7 +32,7 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:8080](http://localhost:8080) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
